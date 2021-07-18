@@ -20,8 +20,8 @@ export const Routes: React.FC = () => {
           </div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/signup" component={SignIn} />
-            <Route exact path="/signin" component={SignUp} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/signin" component={SignIn} />
           </Switch>
         </header>
       </div>
