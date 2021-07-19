@@ -11,19 +11,22 @@ const cache = new InMemoryCache({});
 const httpLink = createHttpLink({
   uri: "http://localhost:4000/graphql",
 })
-
+const link = createHttpLink({
+  uri: "http://localhost:4000/graphql",
+  credentials: 'include'
+});
 const authLink = setContext((_, {headers}) => {
   const accessToken = getAccessToken()
   return {
     headers: {
-      authorization: accessToken ? `Bearer ${accessToken}` : "",
+      authorization: accessToken ? `bearer ${accessToken}` : "",
     }
   }
 })
 
 const client = new ApolloClient({
-  credentials: "include",
-  link: authLink.concat(httpLink),
+  link: authLink.concat(link),
+  // credentials: "include",
   cache
 });
 ReactDOM.render(
