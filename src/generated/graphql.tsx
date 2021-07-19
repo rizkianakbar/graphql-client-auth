@@ -60,8 +60,6 @@ export type User = {
   email: Scalars['String'];
   password: Scalars['String'];
   tokenVersion: Scalars['Float'];
-  updated_at: Scalars['Float'];
-  created_at: Scalars['Float'];
 };
 
 export type ByeQueryVariables = Exact<{ [key: string]: never; }>;
